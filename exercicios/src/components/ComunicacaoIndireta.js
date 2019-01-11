@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, TextInput} from 'react-native'
 import Padrao from '../estilos/Padrao'
 
+
 export const Entrada = props =>
     <View>
         <TextInput value={props.texto}
@@ -9,7 +10,7 @@ export const Entrada = props =>
             onChangeText={props.chamarQuandoMudar}></TextInput>
     </View>
 
-export class TextoSincronizado extends Component{
+export default class TextoSincronizado extends Component {
 
     state = {
         texto: ''
@@ -20,12 +21,13 @@ export class TextoSincronizado extends Component{
     }
 
     render(){
-        return 
+        return (
             <View>
                 <Text style={Padrao.font40}>{this.state.texto}</Text>
                 <Entrada texto={this.state.texto}
                     chamarQuandoMudar={this.alterarTexto}/>
             </View>
+        )
     }
 
 }

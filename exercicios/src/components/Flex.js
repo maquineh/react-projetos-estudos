@@ -6,13 +6,23 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     norte:{
-
+        flex: 1,
+        backgroundColor: '#bdf9ed',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     centro:{
-
+        flex: 2,
+        flexDirection: 'row',
+        backgroundColor: '#f2f9bd',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     sul:{
-
+        flex: 1,
+        backgroundColor: '#bdf9c4',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     circulo:{
         width: 100,
@@ -23,3 +33,21 @@ const styles = StyleSheet.create({
 })
 
 const Circulo = props => <View style={styles.circulo}></View>
+
+export default props => {
+    return (
+        <View style={styles.container}>
+            <View style={styles.norte}>
+                <Circulo/>
+            </View>
+            <View style={styles.centro}>
+                <Circulo/>
+                <Circulo/>
+                <Circulo/>
+            </View>
+            <View style={styles.sul}>
+                <Circulo/>
+            </View>
+        </View>
+    )
+}

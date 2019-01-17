@@ -1,10 +1,13 @@
 import React from 'react'
 import {StyleSheet, Text, 
-        View, TouchableWithoutFeedback} from 'react-native'
+        View, 
+        TouchableWithoutFeedback, 
+        TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 import commonStyles from '../commonStyle'
+import Swipeable from 'react-native-swipeable'
 
 
 export default props => {
@@ -31,7 +34,7 @@ export default props => {
                 <Text style={[styles.description, descStyle]}>
                    {props.desc}
                 </Text>
-                <Text style={styles.date}>{moment(props.estimatedAt).locale('pt-br ').format('ddd, D [de] MMMM')}</Text>
+                <Text style={styles.date}>{moment(props.estimatedAt).locale('pt-br ').format('ddd, D [de] MMM [de] YYYY')}</Text>
             </View>
         </View>
     )

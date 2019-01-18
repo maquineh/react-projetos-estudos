@@ -10,7 +10,7 @@ import commonStyles from '../commonStyle'
 import Task from '../componentes/Task'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import AddTask from './AddTask'
-import ActionButton  from 'react-native-'
+import ActionButton  from 'react-native-action-button'
 
 export default class Agenda extends Component {
 
@@ -67,21 +67,21 @@ export default class Agenda extends Component {
     }
 
     toggleTask = id => {
-        //const tasks = [ ...this.state.tasks]
+        const tasks = [ ...this.state.tasks]
         
-        /*tasks.forEach(task => {
+        tasks.forEach(task => {
             if (task.id === id){
                 task.doneAt = task.doneAt ? null : new Date()
             }
-        })*/
+        })
 
-        const tasks = this.state.tasks.map (task => {
+       /* const tasks = this.state.tasks.map (task => {
             if (task.id === id){
                 task = { ...task}
                 task.doneAt = task.doneAt ? null : new Date()
             }
             return task
-        })
+        })*/
 
         this.setState({tasks}, this.filterTasks)
     }

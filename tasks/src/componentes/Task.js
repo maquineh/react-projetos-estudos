@@ -3,7 +3,7 @@ import {StyleSheet, Text,
         View, 
         TouchableWithoutFeedback, 
         TouchableOpacity} from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 import commonStyles from '../commonStyle'
@@ -15,7 +15,7 @@ export default props => {
    if (props.doneAt !== null){
        check = ( 
            <View style = {styles.done}>
-                <Icon name='check' size={30} color={commonStyles.colors.secondary} />
+                <Icon name='check' size={20} color={commonStyles.colors.secondary} />
            </View>
        )
    } else {
@@ -24,6 +24,13 @@ export default props => {
 
    const descStyle = props.doneAt !== null ? 
         {textDecorationLine: 'line-through' } : {}
+
+
+    const leftContent = (
+            <View></View>
+    )
+
+
 
     return (
         <View style={styles.container}>

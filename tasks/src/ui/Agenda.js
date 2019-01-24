@@ -42,7 +42,8 @@ export default class Agenda extends Component {
     }
 
     toggleFilter = () =>{
-        this.setState({showDoneTasks: !this.state.showDoneTasks}, this.filterTasks)
+        this.setState({showDoneTasks: !this.state.showDoneTasks}, 
+            this.filterTasks)
     }
 
     filterTasks = () => {
@@ -77,7 +78,7 @@ export default class Agenda extends Component {
             }
             return task
         })
-        this.setState({ tasks })
+        this.setState({ tasks }, this.filterTasks)
     }
 
     render (){

@@ -1,0 +1,4 @@
+//Renomear pra .env
+module.exports = {
+    authSecret: ''
+}

@@ -1,19 +1,19 @@
 const express = require('express')
 const app = express()
-const bodyParder = require('body-parser')
 
-app.use(bodyParder.json())
+const db = require('./config/db')
+const consign = require('consign')
 
-app.post('/blabla/:valor', (req, res, next) => {
-    console.log('Func 0')
-    next()
-})
 
-app.post('/blabla/:valor', (req, res) => {
-    console.log('Func 1')
-    res.status(200).send('Meu Backend = ' + req.body.sobrenome)
-})
+consign()
+    .include('./config/passport.js')
+    .then('./config/middlewares.js')
+    .then('./api')
+    .then('./config/routes.js')
+    .into(app)
+
+app.db = db
 
 app.listen(3000, () => {
-    console.log('Backend executando.....')
+    console.log('Tasks iniciado......')
 })

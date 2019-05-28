@@ -1,0 +1,11 @@
+{
+  "name": "alltism-backend",
+  "version": "1.0.0",
+  "description": "teste de login com sequelize passport para o alltism",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,19 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express      = require('express');
+const logger       = require('morgan');
+const bodyParser   = require('body-parser');
+const passport      = require('passport');
+const pe            = require('parse-error');
+const cors          = require('cors');
 
-const app = express();
+const v1    = require('./routes/v1');
+const app   = express();
 
-// faz o parse application/json
+const CONFIG = require('./config/config');
+
+app.use(logger('dev'));
 app.use(bodyParser.json());
-//faz o parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// rota default
-app.get('/', function(req, res) {
-  res.json({ message: 'Servidor no ar!!!' });
-});
-
-// inicializa o app
-app.listen(3000, function() {
-  console.log('Servidor iniciado na porta 3000');
-});
+//Passport
+app.use(passport.initialize());
